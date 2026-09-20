@@ -37,8 +37,26 @@ The project is a backend-focused portfolio project designed to build practical e
 - **Domain** — core business entities and domain rules, independent from infrastructure concerns.
 - **Infrastructure** — Entity Framework Core, PostgreSQL persistence, and database configuration.
 
-## Current Status
-
 The initial ASP.NET Core solution, layered architecture, PostgreSQL/EF Core integration, generic entity base, and initial domain foundation are in place.
 
 The current development focus is the calendar and event-management domain, including events, users, recurring events, tags, and reporting.
+
+## Development
+
+### Database migrations
+
+Create a new migration after changing the EF Core model:
+```powershell
+dotnet ef migrations add <MigrationName> `
+  --project src/TimewaysAPI.Infrastructure `
+  --startup-project src/TimewaysAPI.Api
+```
+
+Apply pending migrations to the database:
+```powershell
+dotnet ef database update `
+  --project src/TimewaysAPI.Infrastructure `
+  --startup-project src/TimewaysAPI.Api
+```
+
+Migrations are stored in `src/TimewaysAPI.Infrastructure/Persistence/Migrations`.
