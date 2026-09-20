@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TaskFlow.Domain.Entities;
+using TimewaysAPI.Domain.Entities;
 
-namespace TaskFlow.Infrastructure.Persistence.Configurations;
+namespace TimewaysAPI.Infrastructure.Persistence.Configurations;
 
 public class ProjectConfiguration : IEntityTypeConfiguration<Project>
 {

@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>TaskFlow.UnitTests</RootNamespace>
+    <RootNamespace>TimewaysAPI.UnitTests</RootNamespace>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -14,6 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../src/TaskFlow.Application/TaskFlow.Application.csproj" />
+    <ProjectReference Include="../../src/TimewaysAPI.Application/TimewaysAPI.Application.csproj" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
-using TaskFlow.Application.Services;
+using TimewaysAPI.Application.Services;
 using Xunit;
 
-namespace TaskFlow.UnitTests;
+namespace TimewaysAPI.UnitTests;
 
 public sealed class HealthServiceTests
 {

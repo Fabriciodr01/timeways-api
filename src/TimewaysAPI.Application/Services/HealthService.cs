@@ -1,4 +1,4 @@
-namespace TaskFlow.Application.Services;
+namespace TimewaysAPI.Application.Services;
 
 public sealed class HealthService : IHealthService
 {

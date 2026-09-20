@@ -1,8 +1,8 @@
-# TaskFlow API
+# Timeways API
 
-TaskFlow is a project-management REST API built with ASP.NET Core and .NET 10.
+Timeways is a calendar and event management REST API built with ASP.NET Core and .NET 10.
 
-The project is being developed as a backend-focused portfolio project to build practical experience with ASP.NET Core, Entity Framework Core, PostgreSQL, authentication, testing, Docker, and CI/CD.
+The project is being developed as a backend-focused portfolio project to build practical experience with ASP.NET Core, Entity Framework Core, PostgreSQL, authentication, testing, Docker, and Continuous Integration (CI).
 
 ## Goals
 
@@ -10,6 +10,8 @@ The project is being developed as a backend-focused portfolio project to build p
 - Practice backend architecture and separation of concerns
 - Work with Entity Framework Core and PostgreSQL
 - Implement authentication and authorization
+- Support Portuguese and English
+- Add recurring events, tags, and event reports
 - Add automated testing
 - Containerize the application with Docker
 - Automate validation with GitHub Actions
@@ -21,7 +23,7 @@ The project is being developed as a backend-focused portfolio project to build p
 - ASP.NET Core Web API
 - Entity Framework Core
 - PostgreSQL
-- JWT Authentication
+- JSON Web Token (JWT) Authentication
 - FluentValidation
 - Swagger / OpenAPI
 - xUnit
@@ -31,15 +33,18 @@ The project is being developed as a backend-focused portfolio project to build p
 
 ## Architecture
 
-TaskFlow follows a layered architecture:
+Timeways follows a layered architecture:
 
 ```text
-TaskFlow.Api
+TimewaysAPI.Api
       ↓
-TaskFlow.Application
+TimewaysAPI.Application
       ↓
-TaskFlow.Domain
+TimewaysAPI.Domain
       ↑
-TaskFlow.Infrastructure
+TimewaysAPI.Infrastructure
       ↓
   PostgreSQL
+```
+
+The domain model is currently being evolved from the initial project-management prototype into the calendar and event model described above.

@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TaskFlow.Domain.Entities;
+using TimewaysAPI.Domain.Entities;
 
-namespace TaskFlow.Infrastructure.Persistence.Configurations;
+namespace TimewaysAPI.Infrastructure.Persistence.Configurations;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {
@@ -17,7 +17,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(user => user.Email)
             .IsRequired()
             .HasMaxLength(255);
-        // Email must be unique because it will identify the user during authentication.
+
         builder.HasIndex(user => user.Email)
             .IsUnique();
     }

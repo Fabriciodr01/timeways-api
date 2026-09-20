@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RootNamespace>TaskFlow.Application</RootNamespace>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="../TaskFlow.Domain/TaskFlow.Domain.csproj" />
-  </ItemGroup>
-</Project>

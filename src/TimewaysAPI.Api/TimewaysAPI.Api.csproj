@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <RootNamespace>TimewaysAPI.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../TimewaysAPI.Application/TimewaysAPI.Application.csproj" />
+    <ProjectReference Include="../TimewaysAPI.Infrastructure/TimewaysAPI.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

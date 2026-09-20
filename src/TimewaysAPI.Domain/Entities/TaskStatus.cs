@@ -1,4 +1,4 @@
-namespace TaskFlow.Domain.Entities;
+namespace TimewaysAPI.Domain.Entities;
 
 public enum TaskStatus
 {

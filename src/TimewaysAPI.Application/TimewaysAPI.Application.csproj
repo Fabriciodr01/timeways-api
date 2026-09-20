@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>TimewaysAPI.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../TimewaysAPI.Domain/TimewaysAPI.Domain.csproj" />
+  </ItemGroup>
+</Project>

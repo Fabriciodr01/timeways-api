@@ -2,15 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.Api", "src\TaskFlow.Api\TaskFlow.Api.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimewaysAPI.Api", "src\TimewaysAPI.Api\TimewaysAPI.Api.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.Application", "src\TaskFlow.Application\TaskFlow.Application.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000002}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimewaysAPI.Application", "src\TimewaysAPI.Application\TimewaysAPI.Application.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.Domain", "src\TaskFlow.Domain\TaskFlow.Domain.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000003}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimewaysAPI.Domain", "src\TimewaysAPI.Domain\TimewaysAPI.Domain.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.Infrastructure", "src\TaskFlow.Infrastructure\TaskFlow.Infrastructure.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000004}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimewaysAPI.Infrastructure", "src\TimewaysAPI.Infrastructure\TimewaysAPI.Infrastructure.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.UnitTests", "tests\TaskFlow.UnitTests\TaskFlow.UnitTests.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimewaysAPI.UnitTests", "tests\TimewaysAPI.UnitTests\TimewaysAPI.UnitTests.csproj", "{A1D2C3E4-1234-4A56-8B90-000000000005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

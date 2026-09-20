@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>TaskFlow.Domain</RootNamespace>
+    <RootNamespace>TimewaysAPI.Domain</RootNamespace>
   </PropertyGroup>
 </Project>
