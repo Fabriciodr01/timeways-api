@@ -5,5 +5,5 @@ public class User : Entity<Guid>
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
 
-    public ICollection<Project> Projects { get; set; } = new List<Project>();
+    public ICollection<Event> Events { get; set; } = new List<Event>();
 }

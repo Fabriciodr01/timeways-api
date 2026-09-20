@@ -19,8 +19,6 @@ The project is a backend-focused portfolio project designed to build practical e
 
 ## Technology Stack
 
-- C#
-- .NET 10
 - ASP.NET Core Web API
 - Entity Framework Core
 - PostgreSQL
@@ -32,22 +30,6 @@ The project is a backend-focused portfolio project designed to build practical e
 - Docker
 - GitHub Actions
 
-## Architecture
-
-Timeways follows a layered architecture:
-
-```text
-TimewaysAPI.Api
-      ↓
-TimewaysAPI.Application
-      ↓
-TimewaysAPI.Domain
-      ↑
-TimewaysAPI.Infrastructure
-      ↓
-  PostgreSQL
-```
-
 ### Layers
 
 - **Api** — HTTP endpoints, request/response handling, Swagger, and application startup.
@@ -57,20 +39,6 @@ TimewaysAPI.Infrastructure
 
 ## Current Status
 
-The initial ASP.NET Core solution, layered architecture, PostgreSQL/EF Core integration, generic entity base, and initial domain model are in place.
+The initial ASP.NET Core solution, layered architecture, PostgreSQL/EF Core integration, generic entity base, and initial domain foundation are in place.
 
-The project is currently being migrated from the original TaskFlow project-management prototype to its intended calendar/event-management domain. The remaining TaskFlow concepts are being replaced incrementally rather than kept as part of the final API.
-
-## Development
-
-The solution targets .NET 10 and uses PostgreSQL for persistence.
-
-Before running the API, configure the `DefaultConnection` connection string in:
-
-```text
-src/TimewaysAPI.Api/appsettings.json
-```
-
-Swagger is enabled in the Development environment.
-
-The repository also includes a GitHub Actions workflow that restores, builds, and tests the solution on pushes and pull requests targeting `main`.
+The current development focus is the calendar and event-management domain, including events, users, recurring events, tags, and reporting.
