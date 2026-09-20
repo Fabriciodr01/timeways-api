@@ -1,4 +1,6 @@
-namespace TimewaysAPI.Application.Services;
+using TimewaysAPI.Application.Health;
+
+namespace TimewaysAPI.Infrastructure.Services;
 
 public sealed class HealthService : IHealthService
 {

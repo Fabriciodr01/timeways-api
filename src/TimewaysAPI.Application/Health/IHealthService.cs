@@ -1,4 +1,4 @@
-namespace TimewaysAPI.Application.Services;
+namespace TimewaysAPI.Application.Health;
 
 public interface IHealthService
 {
