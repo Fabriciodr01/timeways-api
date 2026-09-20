@@ -1,7 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 using TimewaysAPI.Application.Events;
 using TimewaysAPI.Application.Health;
-using Microsoft.EntityFrameworkCore;
 using TimewaysAPI.Infrastructure.Persistence;
 using TimewaysAPI.Infrastructure.Services;
 

@@ -9,7 +9,7 @@ public sealed class EventService(ApplicationDbContext dbContext) : IEventService
 {
     private readonly ApplicationDbContext _dbContext = dbContext;
 
-  public async Task<IReadOnlyList<EventResponse>> GetAllAsync()
+    public async Task<IReadOnlyList<EventResponse>> GetAllAsync()
     {
         return await _dbContext.Events
             .AsNoTracking()
