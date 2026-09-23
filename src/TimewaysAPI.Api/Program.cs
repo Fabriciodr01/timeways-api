@@ -50,6 +50,24 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1",
         Description = "Timeways calendar and event management API."
     });
+
+    options.AddSecurityDefinition(
+        "Bearer",
+        new OpenApiSecurityScheme
+        {
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            Scheme = "bearer",
+            BearerFormat = "JWT",
+            In = ParameterLocation.Header,
+            Description = "Enter a valid JWT token."
+        });
+
+    options.AddSecurityRequirement(document =>
+        new OpenApiSecurityRequirement
+        {
+            [new OpenApiSecuritySchemeReference("Bearer")] = []
+        });
 });
 
 builder.Services.AddScoped<IHealthService, HealthService>();
