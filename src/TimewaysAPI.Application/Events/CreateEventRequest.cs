@@ -11,6 +11,4 @@ public sealed class CreateEventRequest
     public bool IsAllDay { get; init; }
 
     public string? Location { get; init; }
-
-    public int OwnerId { get; init; }
 }
