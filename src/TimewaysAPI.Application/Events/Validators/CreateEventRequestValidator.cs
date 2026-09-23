@@ -20,8 +20,5 @@ public sealed class CreateEventRequestValidator
 
         RuleFor(x => x.Location)
             .MaximumLength(500);
-
-        RuleFor(x => x.OwnerId)
-            .GreaterThan(0);
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using TimewaysAPI.Api.Errors;
+using TimewaysAPI.Api.Services;
 using TimewaysAPI.Application.Auth;
 using TimewaysAPI.Application.Events;
 using TimewaysAPI.Application.Health;
@@ -14,6 +15,7 @@ using TimewaysAPI.Infrastructure.Auth;
 using TimewaysAPI.Infrastructure.Persistence;
 using TimewaysAPI.Infrastructure.Events;
 using TimewaysAPI.Infrastructure.Health;
+using TimewaysAPI.Application.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -71,6 +73,9 @@ builder.Services.AddSwaggerGen(options =>
         });
 });
 
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 builder.Services.AddScoped<IHealthService, HealthService>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IAuthService, AuthService>();

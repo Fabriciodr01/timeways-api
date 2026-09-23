@@ -2,10 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using TimewaysAPI.Application.Events;
 using TimewaysAPI.Domain.Entities;
 using TimewaysAPI.Infrastructure.Persistence;
-
+using TimewaysAPI.Application.Common;
 namespace TimewaysAPI.Infrastructure.Events;
 
-public sealed class EventService(ApplicationDbContext dbContext) : IEventService
+public sealed class EventService(ApplicationDbContext dbContext,
+ ICurrentUserService currentUser) : IEventService
 {
     private readonly ApplicationDbContext _dbContext = dbContext;
 
@@ -13,6 +14,7 @@ public sealed class EventService(ApplicationDbContext dbContext) : IEventService
     {
         return await _dbContext.Events
             .AsNoTracking()
+            .Where(e => e.OwnerId == currentUser.UserId)
             .Select(@event => new EventResponse
             {
                 Id = @event.Id,
@@ -30,7 +32,9 @@ public sealed class EventService(ApplicationDbContext dbContext) : IEventService
     {
         return await _dbContext.Events
             .AsNoTracking()
-            .Where(@event => @event.Id == id)
+            .Where(@event => 
+                @event.Id == id &&
+                @event.OwnerId == currentUser.UserId)
             .Select(@event => new EventResponse
             {
                 Id = @event.Id,
@@ -54,7 +58,7 @@ public sealed class EventService(ApplicationDbContext dbContext) : IEventService
             EndAt = request.EndAt,
             IsAllDay = request.IsAllDay,
             Location = request.Location,
-            OwnerId = request.OwnerId
+            OwnerId = currentUser.UserId
         };
 
         _dbContext.Events.Add(@event);
@@ -78,7 +82,9 @@ public sealed class EventService(ApplicationDbContext dbContext) : IEventService
     UpdateEventRequest request)
     {
         var @event = await _dbContext.Events
-            .FirstOrDefaultAsync(@event => @event.Id == id);
+            .FirstOrDefaultAsync(@event => 
+                @event.Id == id &&
+                @event.OwnerId == currentUser.UserId);
 
         if (@event is null)
         {
@@ -109,7 +115,9 @@ public sealed class EventService(ApplicationDbContext dbContext) : IEventService
     public async Task<bool> DeleteAsync(int id)
     {
         var @event = await _dbContext.Events
-            .FirstOrDefaultAsync(@event => @event.Id == id);
+            .FirstOrDefaultAsync(@event => 
+                @event.Id == id &&
+                @event.OwnerId == currentUser.UserId);
 
         if (@event is null)
         {
