@@ -1,4 +1,4 @@
-using TimewaysAPI.Infrastructure.Services;
+using TimewaysAPI.Infrastructure.Health;
 using Xunit;
 
 namespace TimewaysAPI.UnitTests;

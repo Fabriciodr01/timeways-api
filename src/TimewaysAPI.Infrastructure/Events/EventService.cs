@@ -3,7 +3,7 @@ using TimewaysAPI.Application.Events;
 using TimewaysAPI.Domain.Entities;
 using TimewaysAPI.Infrastructure.Persistence;
 
-namespace TimewaysAPI.Infrastructure.Services;
+namespace TimewaysAPI.Infrastructure.Events;
 
 public sealed class EventService(ApplicationDbContext dbContext) : IEventService
 {

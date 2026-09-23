@@ -1,6 +1,6 @@
 using TimewaysAPI.Application.Health;
 
-namespace TimewaysAPI.Infrastructure.Services;
+namespace TimewaysAPI.Infrastructure.Health;
 
 public sealed class HealthService : IHealthService
 {

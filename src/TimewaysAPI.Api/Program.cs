@@ -12,7 +12,8 @@ using TimewaysAPI.Application.Health;
 using TimewaysAPI.Domain.Entities;
 using TimewaysAPI.Infrastructure.Auth;
 using TimewaysAPI.Infrastructure.Persistence;
-using TimewaysAPI.Infrastructure.Services;
+using TimewaysAPI.Infrastructure.Events;
+using TimewaysAPI.Infrastructure.Health;
 
 var builder = WebApplication.CreateBuilder(args);
 
