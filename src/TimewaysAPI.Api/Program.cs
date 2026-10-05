@@ -137,6 +137,14 @@ app.MapControllers();
 app.MapGet("/api/health", (IHealthService healthService) =>
     Results.Ok(healthService.GetStatus()));
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider
+        .GetRequiredService<ApplicationDbContext>();
+
+    db.Database.Migrate();
+}
+
 app.Run();
 
 public partial class Program { }
