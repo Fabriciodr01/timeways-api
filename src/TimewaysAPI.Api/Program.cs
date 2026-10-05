@@ -138,3 +138,5 @@ app.MapGet("/api/health", (IHealthService healthService) =>
     Results.Ok(healthService.GetStatus()));
 
 app.Run();
+
+public partial class Program { }
