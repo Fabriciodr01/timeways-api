@@ -1,62 +1,127 @@
 # Timeways API
 
-Timeways is a calendar and event management REST API built with ASP.NET Core and .NET 10.
+A calendar and event management REST API built with **ASP.NET Core / .NET 10**.
 
-The project is a backend-focused portfolio project designed to build practical experience with ASP.NET Core, Entity Framework Core, PostgreSQL, authentication, validation, testing, Docker, and CI.
+Built as a portfolio project to develop practical backend experience while transitioning from Front-End to Full Stack development.
 
-## Project Goals
+## Features
 
-- Build a production-style ASP.NET Core Web API
-- Practice layered backend architecture and separation of concerns
-- Model calendar and event-management domain concepts
-- Work with Entity Framework Core and PostgreSQL
-- Implement authentication and authorization
-- Support Portuguese and English
-- Support recurring events, tags, and event reporting
-- Add automated tests
-- Containerize the application with Docker
-- Automate build and test validation with GitHub Actions
+* User registration and login
+* JWT authentication and authorization
+* Event CRUD
+* Event ownership
+* Request validation
+* Global exception handling
+* PostgreSQL persistence
+* EF Core migrations
+* Swagger/OpenAPI
+* Unit and integration tests
+* Docker Compose
 
-## Technology Stack
+## Tech Stack
 
-- ASP.NET Core Web API
-- Entity Framework Core
-- PostgreSQL
-- JWT Authentication
-- FluentValidation
-- Swagger / OpenAPI
-- xUnit
-- Serilog
-- Docker
-- GitHub Actions
+* **C# / .NET 10**
+* **ASP.NET Core**
+* **Entity Framework Core**
+* **PostgreSQL**
+* **JWT**
+* **FluentValidation**
+* **xUnit**
+* **Testcontainers**
+* **Docker**
+* **GitHub Actions**
 
-### Layers
+## Architecture
 
-- **Api** — HTTP endpoints, request/response handling, Swagger, and application startup.
-- **Application** — application services and use-case orchestration.
-- **Domain** — core business entities and domain rules, independent from infrastructure concerns.
-- **Infrastructure** — Entity Framework Core, PostgreSQL persistence, and database configuration.
+```text
+src/
+├── TimewaysAPI.Api
+├── TimewaysAPI.Application
+├── TimewaysAPI.Domain
+└── TimewaysAPI.Infrastructure
 
-The initial ASP.NET Core solution, layered architecture, PostgreSQL/EF Core integration, generic entity base, and initial domain foundation are in place.
-
-The current development focus is the calendar and event-management domain, including events, users, recurring events, tags, and reporting.
-
-## Development
-
-### Database migrations
-
-Create a new migration after changing the EF Core model:
-```powershell
-dotnet ef migrations add <MigrationName> `
-  --project src/TimewaysAPI.Infrastructure `
-  --startup-project src/TimewaysAPI.Api
+tests/
+└── TimewaysAPI.UnitTests
 ```
 
-Apply pending migrations to the database:
-```powershell
-dotnet ef database update `
-  --project src/TimewaysAPI.Infrastructure `
-  --startup-project src/TimewaysAPI.Api
+Simple layered architecture with a focus on keeping the project practical and avoiding unnecessary abstractions.
+
+## Running Locally
+
+### Requirements
+
+* .NET 10 SDK
+* PostgreSQL 17
+
+Configure the database connection and JWT settings using ASP.NET Core configuration or User Secrets.
+
+Then:
+
+```bash
+dotnet restore
+dotnet ef database update --project src/TimewaysAPI.Infrastructure --startup-project src/TimewaysAPI.Api
+dotnet run --project src/TimewaysAPI.Api
 ```
 
-Migrations are stored in `src/TimewaysAPI.Infrastructure/Persistence/Migrations`.
+Swagger:
+
+```text
+http://localhost:5074/swagger
+```
+
+## Docker
+
+The repository includes Docker Compose for running the API and PostgreSQL together.
+
+```bash
+docker compose up --build
+```
+
+API:
+
+```text
+http://localhost:8080
+```
+
+Stop the containers:
+
+```bash
+docker compose down
+```
+
+## API
+
+### Authentication
+
+```text
+POST /api/auth/register
+POST /api/auth/login
+```
+
+### Events
+
+```text
+GET    /api/Events
+GET    /api/Events/{id}
+POST   /api/Events
+PUT    /api/Events/{id}
+DELETE /api/Events/{id}
+```
+
+### Health
+
+```text
+GET /api/health
+```
+
+Authenticated users can only access and modify their own events.
+
+## Testing
+
+```bash
+dotnet test
+```
+
+Integration tests use **Testcontainers** with a real PostgreSQL instance.
+
+**6/6 tests passing.**
